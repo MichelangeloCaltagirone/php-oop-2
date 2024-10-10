@@ -2,14 +2,13 @@
 
 require_once __DIR__ . '/classes/Product.php';
 
-$exampleProduct = new Product('ciotola', 12.34, '....');
-var_dump($exampleProduct);
+$example1 = new Product('Dog', 'medium', 'Toy', 'Tennis hardened Ball', 12.34, '....');
+var_dump($example1);
 
-$exampleProduct2 = new Category('guinzaglio', 13.44, '....', 'Dog', 'Medium');
-var_dump($exampleProduct2);
+
+
 
 ?>
-
 
 
 
