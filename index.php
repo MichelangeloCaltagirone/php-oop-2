@@ -1,3 +1,18 @@
+<?php
+
+require_once __DIR__ . '/classes/Product.php';
+
+$exampleProduct = new Product('ciotola', 12.34, '....');
+var_dump($exampleProduct);
+
+$exampleProduct2 = new Category('guinzaglio', 13.44, '....', 'Dog', 'Medium');
+var_dump($exampleProduct2);
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
