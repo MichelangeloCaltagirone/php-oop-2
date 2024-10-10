@@ -10,15 +10,21 @@ class Product extends Type {
         string $category,
         string $size,
         string $type,
+        string $typeIcon,
         string $name,
         float $price,
         string $picPath
     )
     {
-        parent::__construct($category, $size, $type, $name, $price, $picPath);
+        parent::__construct($category, $size, $type, $typeIcon, $name, $price, $picPath);
         $this->name = $name;
         $this->price = $price;
         $this->picPath = $picPath;
 
+    }
+
+    public function describeSelf() {
+        return parent::describeSelf(). "<br>Nome del prodotto: " . $this->name .
+        "<br> Price: " . $this->price;
     }
 }

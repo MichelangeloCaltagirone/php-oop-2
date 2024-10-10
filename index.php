@@ -2,11 +2,21 @@
 
 require_once __DIR__ . '/classes/Product.php';
 
-$example1 = new Product('Dog', 'medium', 'Toy', 'Tennis hardened Ball', 12.34, '....');
-var_dump($example1);
+$croccantiniDelizie = new Product('Dog', 'small', 'Food', 'arriva', 'Croccantini Delizie', 12.34, '...');
+$guinzaglio = new Product('Dog', 'big', 'Accessories', 'arriva', 'Guinzaglio Gentile', 34.89, '...');
+$fontanina = new Product('Cat', 'all', 'Accessories', 'arriva', 'Fontana di Trevi', 99.89, '....');
+$paperTower = new Product('Cat', 'small','Toy', 'arriva', 'Paper Tower', 55, '....' );
 
 
+// var_dump($croccantiniDelizie, $guinzaglio, $fontanina, $paperTower);
 
+
+$products = [
+    $croccantiniDelizie,
+    $guinzaglio,
+    $fontanina,
+    $paperTower
+];
 
 ?>
 
@@ -32,6 +42,22 @@ var_dump($example1);
         <div class="container">
 
             <h1>Connected</h1>
+
+            <div class="d-flex flex-wrap gap-3">
+                
+                <?php foreach($products as $product) { ?>
+                    <div class="card col-4 m-auto">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $product->name ?></h5>
+                            <p class="card-text">
+                                <?= $product->describeSelf() ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php } ?>
+
+            </div>
 
         </div>
     </main>
