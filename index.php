@@ -5,13 +5,15 @@ require_once __DIR__ . '/classes/Product.php';
 
 
 
+
+
 $croccantiniDelizie = new Product('Dog', 'small', 'Food', '<i class="fa-solid fa-utensils"></i>', 'Croccantini Delizie', 12.34, 'https://www.myselleria.it/trunk/pr_imgbig_6342_crocchette-naturali-cani-cuccioli-mini-nutrix-pi-.jpg');
 $guinzaglio = new Product('Dog', 'big', 'Accessories', '<i class="fa-solid fa-person-shelter"></i>', 'Guinzaglio Gentile', 34.89, 'https://arcaplanet.vtexassets.com/arquivos/ids/219768/croci-cane-guinzaglio-nylon-tubolare-rosso.jpg?v=637454693540300000');
 $fontanina = new Product('Cat', 'all', 'Accessories', '<i class="fa-solid fa-person-shelter"></i>', 'Fontana di Trevi', 99.89, 'https://www.turismoroma.it/sites/default/files/Fontana%20di%20Trevi3.jpg');
 $paperTower = new Product('Cat', 'small','Toy', '<i class="fa-solid fa-star"></i>', 'Paper Tower', 55, 'https://i.etsystatic.com/21815617/r/il/c4d52c/2385854461/il_fullxfull.2385854461_jw4o.jpg' );
 
 
-// var_dump($croccantiniDelizie, $guinzaglio, $fontanina, $paperTower);
+var_dump($croccantiniDelizie, $guinzaglio, $fontanina, $paperTower);
 
 
 $products = [
