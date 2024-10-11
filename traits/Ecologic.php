@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use function PHPSTORM_META\type;
 
 trait Ecologic {
     public bool $ecoFriendly;
@@ -10,5 +12,13 @@ trait Ecologic {
 
     public function getMaterial() {
         return $this->material;
+    }
+
+    public function setEcoFriendly($eco){
+        if (is_bool($eco)) {
+            $this->ecoFriendly = $eco;
+        } else {
+            throw new InvalidArgumentException("ecoFriendly must be bool ouyea funziona");
+        }
     }
 }

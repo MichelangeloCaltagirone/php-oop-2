@@ -15,6 +15,36 @@ $paperTower = new Product('Cat', 'small','Toy', '<i class="fa-solid fa-star"></i
 
 var_dump($croccantiniDelizie, $guinzaglio, $fontanina, $paperTower);
 
+// traits assignement
+
+$croccantiniDelizie->ecoFriendly = true;
+$croccantiniDelizie->material = ['Erbe', 'Carne scelta'];
+
+$guinzaglio->ecoFriendly = false;
+$guinzaglio->material = ['Pelle Bovina'];
+
+$fontanina->ecoFriendly = false;
+$fontanina->material = ['Marmo', 'Lapislazzuli'];
+
+$paperTower->ecoFriendly = true;
+$paperTower->material = ['Carta riciclata'];
+
+// Testing Expectation 
+
+//var_dump($paperTower);
+try {
+    var_dump($paperTower->setEcoFriendly([""]));
+} catch ( Exception $myError ) {
+    echo $myError->getMessage();
+}
+//var_dump($paperTower->setEcoFriendly([""]));
+//var_dump($paperTower);
+
+
+
+
+
+
 
 $products = [
     $croccantiniDelizie,
@@ -22,6 +52,8 @@ $products = [
     $fontanina,
     $paperTower
 ];
+
+var_dump($products);
 
 ?>
 
@@ -58,6 +90,20 @@ $products = [
                             <h5 class="card-title"><?= $product->name ?></h5>
                             <p class="card-text">
                                 <?= $product->describeSelf() ?>
+                            </p>
+                            <p>
+                                Ecosotenibile: 
+                                <span class="<?= ($product->ecoFriendly) ? ('text-success') : ('text-danger') ?>">
+                                    <?= ($product->ecoFriendly) ? ('Yes') : ('No') ?>   
+                                </span>
+                            </p>
+                            <p>
+                                Materiali
+                                <ul>
+                                    <?php foreach($product->material as $singleMaterial) { ?>
+                                        <li><?= $singleMaterial ?></li>
+                                    <? } ?>
+                                </ul>
                             </p>
                         </div>
                     </div>
